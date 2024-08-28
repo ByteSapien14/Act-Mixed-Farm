@@ -258,6 +258,22 @@ address a {
         height: 350px;
     }
 }
+.map-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* This gives a 16:9 aspect ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 @media (max-width: 500px) and (max-height: 896px) {
     header {
@@ -295,7 +311,9 @@ address a {
         max-width: 100%;
         padding: 0 10px;
     }
-
+    .map-container {
+        padding-bottom: 100%; /* Square aspect ratio on very small screens */
+    }
     .navbar-nav .nav-link {
         padding: 0.5rem 1rem;
     }
@@ -330,7 +348,7 @@ address a {
     }
 
     .card-img-top {
-        height: 150px;
+        height: 175px;
         object-fit: cover; /* Ensure images fit properly within the container */
     }
 
